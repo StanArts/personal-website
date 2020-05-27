@@ -5,24 +5,18 @@
     <title>Stanimir's blog</title>
   </head>
   <body>
-    <p>Hello there!</p>
-    <p>It works!</p>
 
+<div>
+  <h1> <a href="/">Stanimir's Blog</a> </h1>
+</div>
+
+{% for post in posts %}
     <div>
-      <h1> <a href="/">Stanimir's Blog</a> </h1>
+      <p>published: {{ post.published_date }}</p>
+      <h2> <a href="">{{post.title}}</a> </h2>
+      <p>{{ post.text|linebreakesbr}}</p>
     </div>
-
-    <div class="">
-      <p>published: 27.05.2020, 13:59</p>
-      <h2><a href="">My first post</a> </h2>
-      <p>Top secret!</p>
-    </div>
-
-    <div class="">
-      <p>published: 27.05.2020, 13:59</p>
-      <h2><a href="">My second post</a> </h2>
-      <p>Top secret!</p>
-    </div>
+{% endfor %}
 
   </body>
 </html>
