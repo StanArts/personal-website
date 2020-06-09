@@ -91,3 +91,6 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_detail', pk=comment.post.pk)
+
+def home_page(request):
+	return render (request, 'blog/homepage.html')
