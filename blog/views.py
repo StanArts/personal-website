@@ -93,4 +93,4 @@ def comment_remove(request, pk):
     return redirect('post_detail', pk=comment.post.pk)
 
 def home_page(request):
-	return render (request, 'blog/homepage.html')
+	return render (request, 'portfolio/homepage.html')
