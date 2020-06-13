@@ -1,47 +1,75 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stanimir Velichkov</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
-    <link href="//fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet" type="text/css">
   </head>
-  <body>
-
-    <div class="page-header">
-      <h1>Stanimir Velichkov</h1>
-      <p>Stan</p>
-    </div>
-
-    <ul class="topnav">
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Contacts</a>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </li>
-    </ul>
-
-    <div style="padding:0 16px;">
-      <h1>Content</h1>
-    </div>
-
-      <!--<div class="button-group">
-        <button class="button">About</button>
-        <button class="button">Projects</button>
-        <a href="/blog"><button class="button">Blog</button></a>
+  <body id="bg-img">
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
       </div>
 
-      <p style="clear:both"><br></p>
-      -->
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/about.html" class="nav-link">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/projects.html" class="nav-link">
+              My projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/contacts.html" class="nav-link">
+              Contacts
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="home">
+      <h1 class="lg-heading">
+        Stanimir <span class="text-secondary">Velichkov</span>
+      </h1>
+      <h2 class="sm-heading">
+        Computer science student passionated about Programming and Game Development
+      </h2>
+      <div class="icons">
+        <a href="#!">
+          <i class="fab fa-instagram fa-2x"></i>
+        </a>
+        <a href="#!">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+        <a href="#!">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="#!">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </main>
+
+    <script src="js/portfolio.js"></script>
   </body>
 </html>
