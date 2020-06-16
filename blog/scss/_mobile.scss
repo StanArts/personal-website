@@ -50,6 +50,16 @@
             */
         }
     }
+
+    .about-info {
+        grid-template-areas:
+            'bioimage'
+            'bio'
+            'edu1'
+            'edu2';
+
+        grid-template-columns: 1fr;
+    }
 }
 
 // Smarphones

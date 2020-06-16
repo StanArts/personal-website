@@ -1,4 +1,4 @@
-$primary-color: #fff;
+$primary-color: #fff; // rgb(34, 26, 26); - the dark mode
 $secondary-color: #0051aa;
 $show-home-image: true;
 $home-image: url(../img/.jpg);
@@ -26,6 +26,15 @@ $background-opacity: 0.9;
                 background: rgba($primary-color, $background-opacity);
             }
         }
+    }
+}
+
+// Set Text Colour
+@function set-text-colour($color) {
+    @if (lightness($color) > 40) {
+        @return #000000;
+    } @else {
+        @return #fff
     }
 }
 

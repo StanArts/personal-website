@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About me</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+  </head>
+  <body>
+    <header>
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item current">
+            <a href="about" class="nav-link">
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              My projects
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contacts.html" class="nav-link">
+              Contacts
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="blog" class="nav-link">
+              Blog
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="about">
+      <h1 class="lg-heading">
+        About
+        <span class="text-secondary">Me</span>
+      </h1>
+      <h2 class="sm-heading">
+        What have I done?
+      </h2>
+      <div class="about-info">
+        <img src="img/portrait.jpg" alt="Stanimir Velichkov" class="bio-image">
+  
+        <div class="bio">
+          <h3 class="text-secondary">BIO</h3>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magni nam nisi quae vitae? Quod molestiae ipsa
+            autem natus eum vel ducimus nulla harum voluptatem eligendi! Unde, reiciendis? Praesentium, laborum.</p>
+        </div>
+  
+        <div class="edu edu-1">
+          <h3>High school</h3>
+          <h6>Name of course</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis totam enim. Nesciunt porro dolores
+            expedita dolor necessitatibus deserunt nemo.</p>
+        </div>
+  
+        <div class="edu edu-2">
+          <h3>University</h3>
+          <h6>Name of course</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis totam enim. Nesciunt porro dolores
+            expedita dolor necessitatibus deserunt nemo.</p>
+        </div>
+  
+        <div class="job edu-3">
+          <h3>Something</h3>
+          <h6>Third option</h6>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis totam enim. Nesciunt porro dolores
+            expedita dolor necessitatibus deserunt nemo.</p>
+        </div>
+      </div>
+    </main>
+  
+    <footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+  
+    <script src="static/js/portfolio.js"></script>
+  </body>
+</html>

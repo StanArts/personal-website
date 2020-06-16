@@ -94,3 +94,6 @@ def comment_remove(request, pk):
 
 def home_page(request):
 	return render (request, 'portfolio/homepage.html')
+
+def about_page(request):
+	return render (request, 'portfolio/about.html')
