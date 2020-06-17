@@ -100,3 +100,6 @@ def about_page(request):
 
 def projects_page(request):
 	return render (request, 'portfolio/projects.html')
+
+def contacts_page(request):
+	return render (request, 'portfolio/contacts.html')
