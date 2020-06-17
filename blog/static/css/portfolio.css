@@ -74,7 +74,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/portrait.jpg");
+      background: url("/static/img/menu_portrait.jpg");
       border-radius: 50%;
       border: solid 3px #0051aa; }
 
@@ -130,6 +130,9 @@ h3 {
     padding: 0.2rem 1rem;
     background: rgba(0, 86, 180, 0.5); }
 
+p {
+  text-align: justify; }
+
 a {
   color: #000000;
   text-decoration: none; }
@@ -137,21 +140,21 @@ a {
 header {
   position: fixed;
   z-index: 2;
-  min-height: calc(100vh - 60px); }
+  width: 100%; }
 
 .text-secondary {
   color: #0051aa; }
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
-      padding: 0.4rem; }
+      padding: 0.4rem;
+      transition: all 1.5s ease-out; }
       main .icons a:hover {
-        color: #0051aa;
-        transition: all 1.5s ease-out; }
+        color: #0051aa; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -160,7 +163,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio' 'edu1 edu2 edu3';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -171,11 +174,11 @@ main {
     grid-area: bio;
     font-size: 1.5rem; }
   .about-info .edu-1 {
-    grid-area: job1; }
+    grid-area: edu1; }
   .about-info .edu-2 {
-    grid-area: job2; }
+    grid-area: edu2; }
   .about-info .edu-3 {
-    grid-area: job3; }
+    grid-area: edu3; }
   .about-info .edu {
     background: white;
     padding: 0.5rem;
@@ -192,25 +195,6 @@ main {
       opacity: 0.5;
       border-color: #0051aa;
       transition: all 1.5s ease-out; }
-
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
-  .boxes div {
-    font-size: 2rem;
-    border: 3px #000000 solid;
-    padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    transition: all 1.5s ease-out; }
-    .boxes div:hover {
-      padding: 0.5rem 1.5rem;
-      background: #0051aa;
-      color: set-text-color(#0051aa); }
-      .boxes div:hover span {
-        color: set-text-color(#0051aa); }
 
 .btn, .btn-dark {
   display: inline-block;

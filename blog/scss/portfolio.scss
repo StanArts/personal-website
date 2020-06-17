@@ -29,6 +29,10 @@ h3 {
     }
 }
 
+p {
+  text-align: justify;
+}
+
 a {
     color: #000000;
     text-decoration: none;
@@ -37,8 +41,7 @@ a {
 header {
     position: fixed;
     z-index: 2;
-    //width: 100%;
-    min-height: calc(100vh - 60px);
+    width: 100%;
 }
 
 .text-secondary{
@@ -46,28 +49,29 @@ header {
 }
 
 main {
-    padding: 4rem;
-    height: 100%;
+  padding: 4rem;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
 
-    .icons {
-        margin-top: 1rem;
+  .icons {
+    margin-top: 1rem;
 
-        a {
-            padding: 0.4rem;
+    a {
+      padding: 0.4rem;
+      @include easeOut;
 
-            &:hover {
-                color: $secondary-color;
-                @include easeOut();
-            }
+        &:hover {
+          color: $secondary-color;
         }
+      }
     }
 
-    &#home {
-        overflow: hidden;
-        h1 {
-            margin-top: 20vh;
-        }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
     }
+  }
 }
 
 .about-info {
@@ -75,7 +79,7 @@ main {
     grid-gap: 30px;
     grid-template-areas:
       'bioimage bio bio'
-      'job1 job2 job3';
+      'edu1 edu2 edu3';
     grid-template-columns: repeat(3, 1fr);
   
     .bio-image {
@@ -91,15 +95,15 @@ main {
     }
   
     .edu-1 {
-      grid-area: job1;
+      grid-area: edu1;
     }
   
     .edu-2 {
-      grid-area: job2;
+      grid-area: edu2;
     }
   
     .edu-3 {
-      grid-area: job3;
+      grid-area: edu3;
     }
   
     .edu {
@@ -123,32 +127,6 @@ main {
         opacity: 0.5;
         border-color: $secondary-color;
         @include easeOut;
-      }
-    }
-  }
-
-  // Contact Page
-  .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
-
-    div {
-      font-size: 2rem;
-      border: 3px #000000 solid;
-      padding: 1.5rem 2.5rem;
-      margin-bottom: 3rem;
-      @include easeOut;
-
-      &:hover {
-        padding: 0.5rem 1.5rem;
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
-        span {
-          color: set-text-color($secondary-color);
-        }
       }
     }
   }
