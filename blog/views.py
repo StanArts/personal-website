@@ -97,3 +97,6 @@ def home_page(request):
 
 def about_page(request):
 	return render (request, 'portfolio/about.html')
+
+def projects_page(request):
+	return render (request, 'portfolio/projects.html')

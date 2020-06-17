@@ -181,12 +181,49 @@ main {
     padding: 0.5rem;
     border-bottom: #0051aa 5px solid; }
 
+.projects {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr); }
+  .projects img {
+    width: 100%;
+    border: 3px #000000 solid; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #0051aa;
+      transition: all 1.5s ease-out; }
+
+.btn, .btn-dark {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover {
+    background: #0051aa;
+    color: set-text-color(#0051aa); }
+
+.btn-dark {
+  background: gray;
+  color: #ffffff; }
+
+.btn-dark {
+  background: white;
+  color: #333333; }
+
 #main-footer {
   text-align: center;
   padding: 1rem;
   background: #e6e6e6;
   color: set-text-color(#fff);
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -219,8 +256,12 @@ main {
             */ }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'edu1' 'edu2';
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .projects {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; } }
+    margin-top: 10vh; }
+  .projects {
+    grid-template-columns: 1fr; } }

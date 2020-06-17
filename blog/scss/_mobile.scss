@@ -1,11 +1,15 @@
 // Widescreens
 @include mediaXL {
-
+    .projects {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 // Desktops & Laptops
 @include mediaLg {
-    
+    .projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 // Tablets
@@ -60,11 +64,19 @@
 
         grid-template-columns: 1fr;
     }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 // Smarphones
 @include mediaSm {
     main#home h1 {
         margin-top: 10vh;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
     }
 }
