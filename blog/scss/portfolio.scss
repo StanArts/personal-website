@@ -2,8 +2,6 @@
 @import 'menu';
 
 body {
-    @include background;
-    background: $primary-color;
     color: set-text-colour($primary-color);
     height: 100%;
     margin: 0;
@@ -20,6 +18,12 @@ h3 {
 
     &.lg-heading {
         font-size: 6rem;
+    }
+
+    &.sm-heading-home {
+        margin-bottom: 2rem;
+        padding: 0.2rem 0.2rem;
+        background: rgba(lighten($secondary-color, 2), 0);
     }
 
     &.sm-heading {
@@ -42,6 +46,10 @@ header {
     position: fixed;
     z-index: 2;
     width: 100%;
+}
+
+.text-secondary-home{
+  color: #ffffff;
 }
 
 .text-secondary{

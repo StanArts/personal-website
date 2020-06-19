@@ -101,5 +101,5 @@ def about_page(request):
 def projects_page(request):
 	return render (request, 'portfolio/projects.html')
 
-def galery_page(request):
+def gallery_page(request):
 	return render (request, 'portfolio/galery.html')

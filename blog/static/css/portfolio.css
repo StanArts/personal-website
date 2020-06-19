@@ -1,3 +1,10 @@
+#particles-js {
+  background: linear-gradient(45deg, #fff, #0052aa);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1; }
+
 .menu-btn {
   position: absolute;
   z-index: 3;
@@ -52,7 +59,7 @@
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #0051aa; }
+      color: #0052aa; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -64,7 +71,7 @@
     text-decoration: none;
     transition: all 1.5s ease-out; }
     .menu .nav-link:hover {
-      color: #0051aa; }
+      color: #0052aa; }
   .menu-branding {
     background: #fff;
     transform: translate3d(-100%, 0, 0);
@@ -76,7 +83,7 @@
       height: 250px;
       background: url("/static/img/menu_portrait.jpg");
       border-radius: 50%;
-      border: solid 3px #0051aa; }
+      border: solid 3px #0052aa; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -94,25 +101,11 @@
   transition-delay: 0.5s; }
 
 body {
-  background: #fff;
   color: #000000;
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
-  body#bg-img {
-    background: url(../img/.jpg);
-    background-attachment: fixed;
-    background-size: cover; }
-    body#bg-img:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      background: rgba(255, 255, 255, 0.9); }
 
 h1,
 h2,
@@ -123,12 +116,18 @@ h3 {
   h2.lg-heading,
   h3.lg-heading {
     font-size: 6rem; }
+  h1.sm-heading-home,
+  h2.sm-heading-home,
+  h3.sm-heading-home {
+    margin-bottom: 2rem;
+    padding: 0.2rem 0.2rem;
+    background: rgba(0, 87, 180, 0); }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(0, 86, 180, 0.5); }
+    background: rgba(0, 87, 180, 0.5); }
 
 p {
   text-align: justify; }
@@ -142,8 +141,11 @@ header {
   z-index: 2;
   width: 100%; }
 
+.text-secondary-home {
+  color: #ffffff; }
+
 .text-secondary {
-  color: #0051aa; }
+  color: #0052aa; }
 
 main {
   padding: 4rem;
@@ -154,7 +156,7 @@ main {
       padding: 0.4rem;
       transition: all 1.5s ease-out; }
       main .icons a:hover {
-        color: #0051aa; }
+        color: #0052aa; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -169,7 +171,7 @@ main {
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
-    border: #0051aa 3px solid; }
+    border: #0052aa 3px solid; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -182,7 +184,7 @@ main {
   .about-info .edu {
     background: white;
     padding: 0.5rem;
-    border-bottom: #0051aa 5px solid; }
+    border-bottom: #0052aa 5px solid; }
 
 .projects {
   display: grid;
@@ -193,7 +195,7 @@ main {
     border: 3px #000000 solid; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #0051aa;
+      border-color: #0052aa;
       transition: all 1.5s ease-out; }
 
 .btn, .btn-dark {
@@ -202,8 +204,8 @@ main {
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover {
-    background: #0051aa;
-    color: set-text-color(#0051aa); }
+    background: #0052aa;
+    color: set-text-color(#0052aa); }
 
 .btn-dark {
   background: gray;

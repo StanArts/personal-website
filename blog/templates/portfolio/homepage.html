@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
   </head>
   <body>
+    
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
@@ -39,8 +40,8 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="galery" class="nav-link">
-              Galery
+            <a href="gallery" class="nav-link">
+              Gallery
             </a>
           </li>
           <li class="nav-item">
@@ -52,29 +53,43 @@
       </nav>
     </header>
 
+    <div id="particles-js"></div>
+
     <main id="home">
       <h1 class="lg-heading">
         Stanimir <span class="text-secondary">Velichkov</span>
       </h1>
-      <h2 class="sm-heading">
-        Computer science student / Game developer hobbyist
+      <h2 class="sm-heading-home">
+        <span class="text-secondary">Computer science student</span> / Game developer hobbyist
       </h2>
+      
       <div class="icons">
-        <a href="#!">
+        <a href="mailto: stanimirgevel@gmail.com">
+          <i class="far fa-envelope fa-2x"></i>
+        </a>
+        <a href="https://www.instagram.com/stanimirvelichkov/?hl=bg "target="_blank">
           <i class="fab fa-instagram fa-2x"></i>
         </a>
-        <a href="#!">
+        <a href="https://www.facebook.com/profile.php?id=100007832235390" target="_blank">
           <i class="fab fa-facebook fa-2x"></i>
         </a>
-        <a href="#!">
+        <a href="#!" target="_blank">
           <i class="fab fa-linkedin fa-2x"></i>
         </a>
-        <a href="#!">
+        <a href="https://github.com/StanArts" target="_blank">
           <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.patreon.com/StanimirVelichkov" target="_blank">
+          <i class="fab fa-patreon fa-2x"></i>
+        </a>
+        <a href="https://stan-arts.itch.io/" target="_blank">
+          <i class="fab fa-itch-io fa-2x"></i>
         </a>
       </div>
     </main>
 
     <script src="static/js/portfolio.js"></script>
+    <script type="text/javascript" src="static/js/particles/particles.js"></script>
+    <script type="text/javascript" src="static/js/particles/app.js"></script>
   </body>
 </html>
