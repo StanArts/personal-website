@@ -2,11 +2,13 @@
 @import 'menu';
 
 body {
-    color: set-text-colour($primary-color);
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  @include themed() {
+      color: set-text-colour(t(primary));
+  }   
 }
 
 // Headings
@@ -23,13 +25,17 @@ h3 {
     &.sm-heading-home {
         margin-bottom: 2rem;
         padding: 0.2rem 0.2rem;
-        background: rgba(lighten($secondary-color, 2), 0);
+        @include themed() {
+          background: rgba(lighten(t(secondary), 2), 0);
+        }
     }
 
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
-        background: rgba(lighten($secondary-color, 2), 0.5);
+        @include themed() {
+          background: rgba(lighten(t(secondary), 2), 0.5);
+        }
     }
 }
 
@@ -53,7 +59,9 @@ header {
 }
 
 .text-secondary{
-    color: $secondary-color;
+    @include themed() {
+      color: t(secondary);
+    }
 }
 
 main {
@@ -68,8 +76,13 @@ main {
       padding: 0.4rem;
       @include easeOut;
 
+      @include themed() {
+        color: set-text-colour(t(primary));
+      }
         &:hover {
-          color: $secondary-color;
+          @include themed() {
+            color: t(secondary);
+          }
         }
       }
     }
@@ -94,7 +107,9 @@ main {
       grid-area: bioimage;
       margin: auto;
       border-radius: 50%;
-      border: $secondary-color 3px solid;
+      @include themed() {
+        border: t(secondary) 3px solid;
+      }
     }
   
     .bio {
@@ -115,9 +130,11 @@ main {
     }
   
     .edu {
-      background: lighten($primary-color, 5);
       padding: 0.5rem;
-      border-bottom: $secondary-color 5px solid;
+      @include themed() {
+        background: lighten(t(primary), 5);
+        border-bottom: t(secondary) 5px solid;
+      }
     }
   }
 
@@ -133,7 +150,9 @@ main {
 
       &:hover {
         opacity: 0.5;
-        border-color: $secondary-color;
+        @include themed() {
+          border-color: t(secondary);
+        }
         @include easeOut;
       }
     }
@@ -146,20 +165,26 @@ main {
     border: 0;
     margin-bottom: 0.3rem;
     &:hover {
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
+      @include themed() {
+        background: t($secondary);
+        color: set-text-color(t($secondary));
+      }
     }
   }
 
   .btn-dark {
     @extend .btn;
-    background: darken($primary-color, 50);
+    @include themed() { 
+      background: darken(t($primary), 50);
+    }
     color: #ffffff;
   }
 
-  .btn-dark {
+  .btn-light {
     @extend .btn;
-    background: lighten($primary-color, 50);
+    @include themed() {
+      background: lighten(t($primary), 50);
+    }
     color: #333333;
   }
 
@@ -167,9 +192,76 @@ main {
   #main-footer {
     text-align: center;
     padding: 1rem;
-    background: darken($primary-color, 10);
-    color: set-text-color($primary-color);
+    @include themed() {
+      background: darken(t($primary), 10);
+      color: set-text-color(t($primary));
+    }
     height: 60px;
   }
+
+  // Dark mode toggle
+
+  .switch {
+    position: absolute;
+    cursor: pointer;
+    display: block;
+    left: 20px;
+    top: 15px;
+    width: 45px;
+    height: 45px;
+    margin: 0 0 5px 0;
+    
+    @include easeOut;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #ffffff;
+    transition: .5s;
+    border: 3px solid #ffffff;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    bottom: 14px;
+    top: 8px;
+    background-color: #000000; // rgb(175, 175, 175);
+    transition: .5s;;
+  }
+
+  .switch input { display: none; }
+
+  input:checked + .slider {
+    background-color: black;
+  }
+
+  input:checked + .slider:before{
+    transform: translateX(20px) rotateZ(45deg);
+    background: yellow;
+  }
+
+  .slider.round {
+    border-radius: 35px;
+  }
+
+  .slider.round:before {
+    width: 43%;
+    height: 23%;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    transform: rotateZ(-45deg);
+  }
   
+  html.transition,
+  html.transition *,
+  html.transition * :before,
+  html.transition * :after {
+    transition: all 750ms !important;
+    transition-delay: 0 !important;
+  }
+
   @import 'mobile';

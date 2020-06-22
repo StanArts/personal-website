@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,6 +17,13 @@
         <div class="btn-line"></div>
         <div class="btn-line"></div>
         <div class="btn-line"></div>
+      </div>
+
+      <div>
+        <label class="switch">
+            <input type="checkbox" id="switch" name="theme">
+            <span class="slider round"></span>
+        </label>
       </div>
 
       <nav class="menu">
@@ -88,6 +95,7 @@
       </div>
     </main>
 
+    <script src="static/js/dm_toggle.js"></script>
     <script src="static/js/portfolio.js"></script>
     <script type="text/javascript" src="static/js/particles/particles.js"></script>
     <script type="text/javascript" src="static/js/particles/app.js"></script>

@@ -102,4 +102,4 @@ def projects_page(request):
 	return render (request, 'portfolio/projects.html')
 
 def gallery_page(request):
-	return render (request, 'portfolio/galery.html')
+	return render (request, 'portfolio/gallery.html')

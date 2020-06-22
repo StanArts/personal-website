@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,12 +10,19 @@
 
     <link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
   </head>
-  <body>
+  <body id="bg">
     <header>
       <div class="menu-btn">
         <div class="btn-line"></div>
         <div class="btn-line"></div>
         <div class="btn-line"></div>
+      </div>
+
+      <div>
+        <label class="switch">
+            <input type="checkbox" id="switch" name="theme">
+            <span class="slider round"></span>
+        </label>
       </div>
 
       <nav class="menu">
@@ -55,7 +62,7 @@
     <main>
       <h1 class="lg-heading">
         My
-        <span class="text-secondary">Galery</span>
+        <span class="text-secondary">Gallery</span>
       </h1>
       <h2 class="sm-heading">
         <i>Coming soon... </i>
@@ -68,6 +75,7 @@
       Copyright &copy; 2020
     </footer>
   
+    <script src="static/js/dm_toggle.js"></script>
     <script src="static/js/portfolio.js"></script>
   </body>
 </html>

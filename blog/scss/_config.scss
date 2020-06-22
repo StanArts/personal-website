@@ -1,20 +1,70 @@
-$primary-color: #fff; // rgb(34, 26, 26); - the dark mode
-$secondary-color: #0052aa;
-$show-home-image: true;
-//$home-image: url(../img/.jpg);
+// Light mode
+$primary-light: #fff;
+$secondary-light: #0052aa;
+// Dark mode
+$primary-dark: #221a1a;
+$secondary-dark: #00a7aa;
+
+$primary: 'primary';
+$secondary: 'secondary';
+
+$themes: (
+    light: (
+        primary: $primary-light,
+        secondary: $secondary-light
+    ),
+
+    dark: (
+        primary: $primary-dark,
+        secondary: $secondary-dark
+    ),
+);
+
+@mixin themed() {
+    @each $theme, $map in $themes {
+      [data-theme= '#{$theme}'] & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+@function t($key) {
+    @return map-get($theme-map, $key);
+}
+
 $background-opacity: 0.9;
 
 @mixin easeOut {
     transition: all 1.5s ease-out;
 }
 
+#bg {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    @include themed() {
+        background: rgba(t(primary), $background-opacity);
+    }
+}     
+
 #particles-js {
-    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    @include themed() {
+        background: linear-gradient(10deg, t(primary), t(secondary));
+    }
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
-
 }
 
 // Set Text Colour
