@@ -1,43 +1,32 @@
-let darkMode = localStorage.getItem("darkMode");
-const checkbox = document.querySelector('input[name=theme]');
+const toggleSwitch = document.querySelector('input[name=theme]');
+const currentTheme = localStorage.getItem('theme');
 
-const enableDarkMode = () => {
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
 
-  document.documentElement.setAttribute('data-theme', 'dark');
-
-  document.documentElement.classList.add("darkmode");
-
-  localStorage.setItem("darkMode", "enabled");
-};
-
-const disableDarkMode = () => {
-
-  document.documentElement.setAttribute('data-theme', 'light');
-
-  document.documentElement.classList.remove("darkmode");
-
-  localStorage.setItem("darkMode", null)
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+  }
 }
 
-if (darkMode === "enabled") {
-  enableDarkMode();
+function switchTheme(e) {
+  if (e.target.checked) {
+    trans();
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  } else {
+    trans();
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
 }
 
-checkbox.addEventListener('change', () => {
-  darkMode = localStorage.getItem("darkMode");
-  if (darkMode !== "enabled") {
-    trans();
-    enableDarkMode();
-  }
-  else {
-    trans();
-    disableDarkMode();
-  }
-});
+toggleSwitch.addEventListener('change', switchTheme, false);
 
-      let trans = () => {
-        document.documentElement.classList.add('transition');
-        window.setTimeout(() => {
-          document.documentElement.classList.remove('transition')
-        }, 1000)
-      }
+let trans = () => {
+  document.documentElement.classList.add('transition');
+  window.setTimeout(() => {
+    document.documentElement.classList.remove('transition')
+  }, 1000)
+}
+
