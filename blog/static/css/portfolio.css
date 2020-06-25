@@ -257,8 +257,8 @@ main {
   .about-info .skills_tab {
     grid-area: skills; }
   .about-info .bar {
-    height: 280px;
-    width: 280px;
+    height: 150px;
+    width: 150px;
     display: inline-block;
     position: relative;
     border-radius: 50%;

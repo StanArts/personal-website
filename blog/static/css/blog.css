@@ -8,6 +8,7 @@ section {
   height: 27vh;
   background-color: #0051aa;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .page-header {
@@ -32,37 +33,41 @@ section .wave {
   background-size: 1000px 100px;
 }
 
-section .wave.wave1 {
-  animation: animate 30s linear infinite;
-  z-index: 1000;
-  opacity: 1;
-  animation-delay: 0s;
-  bottom: 0px;
-}
+  section .wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0px;
+  }
 
-section .wave.wave2 {
-  animation: animate2 15s linear infinite;
-  z-index: 999;
-  opacity: 0.5;
-  animation-delay: -5s;
-  bottom: 10px;
-}
+  section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+  }
 
-section .wave.wave3 {
-  animation: animate 15s linear infinite;
-  z-index: 998;
-  opacity: 0.2;
-  animation-delay: -2s;
-  bottom: 15px;
-}
+  section .wave.wave3 {
+    animation: animate 15s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+  }
 
-section .wave.wave4 {
-  animation: animate2 5s linear infinite;
-  z-index: 997;
-  opacity: 0.7;
-  animation-delay: -5s;
-  bottom: 20px;
-}
+  section .wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+  }
+
+  .darkmode--activated .wave.wave1, .darkmode--activated .wave.wave2, .darkmode--activated .wave.wave3, .darkmode--activated .wave.wave4 {
+    color: #000;
+  }
 
 @keyframes animate {
   0% {
@@ -80,6 +85,10 @@ section .wave.wave4 {
   100% {
     background-position-x: -1000px;
   }
+}
+
+.darkmode-layer, .darkmode-toggle {
+  z-index: 500;
 }
 
 .content {
@@ -121,3 +130,5 @@ h1, h2, h3, h4 {
   color: #000000;
   margin: 20px 0px 20px 20px;
 }
+
+
