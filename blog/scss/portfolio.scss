@@ -100,7 +100,9 @@ main {
     grid-gap: 30px;
     grid-template-areas:
       'bioimage bio bio'
-      'edu1 edu2 edu3';
+      'skills skills skills'
+      'edu1 edu2 edu3'
+      'info info info';
     grid-template-columns: repeat(3, 1fr);
   
     .bio-image {
@@ -127,15 +129,171 @@ main {
   
     .edu-3 {
       grid-area: edu3;
+      
     }
   
     .edu {
       padding: 0.5rem;
+      border-radius: 10px;
+      //box-shadow: rgba(0, 0, 0, 0.2);
       @include themed() {
-        background: lighten(t(primary), 5);
+        // to remind me to write a small colour function later
+          background: lighten(t(primary), 5);
         border-bottom: t(secondary) 5px solid;
       }
     }
+    
+    .skills_tab {
+      grid-area: skills;
+    }
+
+    .bar {
+      height: 280px;
+      width: 280px;
+      display: inline-block;
+      @include themed() {
+        box-shadow: -3px -3px 7px t(primary), 3px 3px 5px darken($color: t(primary), $amount: 2);
+      }
+      position: relative;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    .bar::after {
+      content: "";
+      position: absolute;
+      height: 80%;
+      border-radius: 50%;
+      width: 80%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include themed() {
+        box-shadow: inset -3px -3px 7px t(primary), inset 3px 3px 5px darken($color: t(primary), $amount: 2);
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      fill: none;
+    }
+
+    svg circle {
+      position: absolute;
+      transform: scale(.90);
+      transform-origin: center;
+      //transform: scale(.8);
+      @include themed() {
+        stroke: t(secondary);
+      }
+      stroke-width: 30px;
+      stroke-dasharray: 880px;
+      stroke-dashoffset: 880px;
+      animation: progress_bar 1s ease-in-out forwards;
+    }
+
+    @keyframes progress_bar {
+      0% {
+        stroke-dashoffset: 880px;
+      }
+      100% {
+        stroke-dashoffset: calc(880px - (880px * 100)/100);
+      }
+    }
+
+    .e_column_btn {
+      cursor: pointer;
+    }
+
+    .e_column_btn:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .containerTab {
+      grid-area: info;
+      padding: auto;
+      @include themed() {
+        color: set-text-colour(t(primary));
+      }
+      div {
+        margin: 25px;
+      }
+    }
+
+    .table:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .close_btn {
+      float: right;
+      @include themed() {
+        color: set-text-colour(t(primary));
+      }
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    // .accordion {
+      
+    //   max-height: auto;
+    //   overflow: hidden;
+    // }
+
+    // .accordion__label,
+    // .accordion__content {
+    //   padding: 14px 20px;
+    // }
+
+    // .accordion__label {
+    //   display: block;
+    //   font-weight: 500;
+    //   cursor: pointer;
+    //   position: relative;
+    //   transition: background 0.1s;
+    // }
+
+    // .accordion__label:hover {
+    //   border-radius: 10px;
+    //   background: rgba(0, 0, 0, 0.3);
+    // }
+
+    // .accordion__label::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 50%;
+    //   transform: translateX(-50%);
+    //   right: 20px;
+    //   width: 12px;
+    //   height: 6px;
+    //   background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+    //   background-size: contain;
+    //   transition: transform 0.4s;
+    // }
+
+    // .accordion__content {
+    //   grid-area: desc;
+    //    : 1.6;
+    //   font-size: 0.85em;
+    //   display: none;
+    // }
+
+    // .accordion__input {
+    //   display: none;
+    // }
+
+    // .accordion__input:checked ~ .accordion__content {
+    //   display: block;
+    // }
+
+    // .accordion__input:checked ~ .accordion__label::after {
+    //   transform: translateX(-50%) rotate(0.5turn);
+    // }
+
+    
   }
 
   //Projects

@@ -226,7 +226,7 @@ main {
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'edu1 edu2 edu3';
+  grid-template-areas: 'bioimage bio bio' 'skills skills skills' 'edu1 edu2 edu3' 'info info info';
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -246,13 +246,88 @@ main {
   .about-info .edu-3 {
     grid-area: edu3; }
   .about-info .edu {
-    padding: 0.5rem; }
+    padding: 0.5rem;
+    border-radius: 10px; }
     [data-theme='light'] .about-info .edu {
       background: white;
       border-bottom: #0052aa 5px solid; }
     [data-theme='dark'] .about-info .edu {
       background: #302525;
       border-bottom: #00a7aa 5px solid; }
+  .about-info .skills_tab {
+    grid-area: skills; }
+  .about-info .bar {
+    height: 280px;
+    width: 280px;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden; }
+    [data-theme='light'] .about-info .bar {
+      box-shadow: -3px -3px 7px #fff, 3px 3px 5px #fafafa; }
+    [data-theme='dark'] .about-info .bar {
+      box-shadow: -3px -3px 7px #221a1a, 3px 3px 5px #1c1616; }
+  .about-info .bar::after {
+    content: "";
+    position: absolute;
+    height: 80%;
+    border-radius: 50%;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    [data-theme='light'] .about-info .bar::after {
+      box-shadow: inset -3px -3px 7px #fff, inset 3px 3px 5px #fafafa; }
+    [data-theme='dark'] .about-info .bar::after {
+      box-shadow: inset -3px -3px 7px #221a1a, inset 3px 3px 5px #1c1616; }
+  .about-info svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    fill: none; }
+  .about-info svg circle {
+    position: absolute;
+    transform: scale(0.9);
+    transform-origin: center;
+    stroke-width: 30px;
+    stroke-dasharray: 880px;
+    stroke-dashoffset: 880px;
+    animation: progress_bar 1s ease-in-out forwards; }
+    [data-theme='light'] .about-info svg circle {
+      stroke: #0052aa; }
+    [data-theme='dark'] .about-info svg circle {
+      stroke: #00a7aa; }
+
+@keyframes progress_bar {
+  0% {
+    stroke-dashoffset: 880px; }
+  100% {
+    stroke-dashoffset: calc(880px - (880px * 100)/100); } }
+  .about-info .e_column_btn {
+    cursor: pointer; }
+  .about-info .e_column_btn:hover {
+    background: rgba(0, 0, 0, 0.5); }
+  .about-info .containerTab {
+    grid-area: info;
+    padding: auto; }
+    [data-theme='light'] .about-info .containerTab {
+      color: #000000; }
+    [data-theme='dark'] .about-info .containerTab {
+      color: #fff; }
+    .about-info .containerTab div {
+      margin: 25px; }
+  .about-info .table:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .about-info .close_btn {
+    float: right;
+    font-size: 25px;
+    cursor: pointer; }
+    [data-theme='light'] .about-info .close_btn {
+      color: #000000; }
+    [data-theme='dark'] .about-info .close_btn {
+      color: #fff; }
 
 .projects {
   display: grid;
@@ -455,7 +530,7 @@ html.transition * :after {
             height: 150px;
             */ }
   .about-info {
-    grid-template-areas: 'bioimage' 'bio' 'edu1' 'edu2';
+    grid-template-areas: 'bioimage' 'bio' 'edu1' 'edu2' 'edu3';
     grid-template-columns: 1fr; }
   .projects {
     grid-template-columns: repeat(2, 1fr); } }

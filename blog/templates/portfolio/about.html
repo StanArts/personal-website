@@ -78,29 +78,92 @@
             as well as listening music.
           </p>
         </div>
+
+        
+
+        <div class="edu skills_tab">
+          <!-- <h2>Programming Skills</h2> -->
+          <!-- <ul>
+            <li class="web_skills">HTML5/CSS3/JS</li>
+            <li class="java_skill">Java</li>
+            <li class="c#_skill">C#</li>
+            <li class="python_skill">Python</li>
+          </ul> -->
+          <div class="bar">
+            <svg>
+              <circle cx="50%" cy="50%" r="50%"></circle>
+            </svg>
+          </div>
+        </div>
   
         <div class="edu edu-1">
           <h2>High school</h2>
-          <h3><span class="text-secondary">National High School for Mathematics and Sciences</span> <br> Sofia, Bulgaria </h3>
+          <h3><span class="text-secondary"> <i> National High School for Mathematics and Sciences</span> <br> Sofia, Bulgaria </i></h3>
           <h4><i>2014 - 2019</i></h4>
           <h3> <span class="text-secondary">Mathematics and Informatics</span></h3>
         </div>
   
         <div class="edu edu-2">
           <h2>University</h2>
-          <h3><span class="text-secondary">University of Birmingham</span> <br> Birmingham, United Kingdom </h3>
+          <h3><span class="text-secondary"> <i> University of Birmingham</span> <br> Birmingham, United Kingdom </i></h3>
           <h4><i>2019 - present</i></h4>
           <h3> <span class="text-secondary">Computer science</span> </h3>
         </div>
-  
-        <div class="edu edu-3">
-          <h2>Hackathons</h2>
-          <h3><span class="text-secondary">List of hackathons and competitions I've participated in</span></h3>
-          <h4><i>2018 - 2020</i></h4>
-          <p><i>Here I will upload a full list with all of the events I took part in. I will keep you updated!</i></p>
+
+        <div class="edu edu-3 e_column_btn" onclick="openTab('events');">
+          <div class="table">
+              <h2>Events</h2>
+              <h3><span class="text-secondary"> <i> Hackathons <br> Competitions </i> </span></h3>
+              <h4><i>2018 - 2020</i></h4>
+              <h3><span class="text-secondary"><i>Learn more</i></span></h3>
+          </div>
         </div>
+
+        <div id="events" class="edu containerTab" style="display: none">
+          <span onclick="this.parentElement.style.display='none'" class="close_btn">x</span>
+            <div>
+              <h2>Content</h2>
+              <ul>
+                <li>Event 1</li>
+                <li>Event 2</li>
+                <li>Event 3</li>
+              </ul>
+            </div>
+        </div>
+        
+<!--         
+            <div class="edu edu-3 accordion">
+              <div class="accordion">
+              <div>
+                <input type="checkbox" name="accordion" id="events" class="accordion__input">
+                <label for="events" class="accordion__label">
+                  <h2>Events</h2>
+                  <h3><span class="text-secondary">Hackathons and competitions I've participated in</span></h3>
+                  <h4><i>2018 - 2020</i></h4>
+                </label>
+                <div class="accordion__content">
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio repudiandae officia cupiditate debitis temporibus provident aperiam accusantium! Tempore, beatae adipisci.
+                  </p>
+                </div>
+              </div>
+            </div> -->
+            
+        
       </div>
     </main>
+
+    <script>
+      // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
+      function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("containerTab");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+      } 
+    </script>
   
     <footer id="main-footer">
       Copyright &copy; 2020
