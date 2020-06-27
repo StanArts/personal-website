@@ -1,7 +1,3 @@
-/*
-
-*/
-
 section {
   position: relative;
   width: 100%;
@@ -9,6 +5,16 @@ section {
   background-color: #0051aa;
   overflow: hidden;
   isolation: isolate;
+
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
+.darkmode--activated section {
+  
+  background-color: #ff5855; /* inverted to #00a7aa */
 }
 
 .page-header {
@@ -130,5 +136,3 @@ h1, h2, h3, h4 {
   color: #000000;
   margin: 20px 0px 20px 20px;
 }
-
-

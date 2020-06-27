@@ -136,70 +136,137 @@ main {
       padding: 0.5rem;
       border-radius: 10px;
       //box-shadow: rgba(0, 0, 0, 0.2);
+      // h2 {
+      //   text-transform: uppercase;
+      // }
       @include themed() {
-        // to remind me to write a small colour function later
-          background: lighten(t(primary), 5);
-        border-bottom: t(secondary) 5px solid;
+          @if (lightness(t(primary)) > 40) {
+            background: darken(t(primary), 5);
+          } @else {
+            background: lighten(t(primary), 5);
+          }
+          border-bottom: t(secondary) 5px solid;
       }
     }
     
     .skills_tab {
       grid-area: skills;
-    }
-
-    .bar {
-      height: 150px;
-      width: 150px;
-      display: inline-block;
-      @include themed() {
-        box-shadow: -3px -3px 7px t(primary), 3px 3px 5px darken($color: t(primary), $amount: 2);
-      }
-      position: relative;
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    .bar::after {
-      content: "";
-      position: absolute;
-      height: 80%;
-      border-radius: 50%;
-      width: 80%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      @include themed() {
-        box-shadow: inset -3px -3px 7px t(primary), inset 3px 3px 5px darken($color: t(primary), $amount: 2);
-      }
-    }
-
-    svg {
       width: 100%;
-      height: 100%;
-      position: relative;
-      fill: none;
-    }
+      //position: absolute;
+      //top: 50%;
+      //left: 50%;
+      //transform: translate(-50%, -50%);
+      //padding: 20px;
+      background: #333333;
+      box-sizing: border-box;
+      //box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
 
-    svg circle {
-      position: absolute;
-      transform: scale(.90);
-      transform-origin: center;
-      //transform: scale(.8);
-      @include themed() {
-        stroke: t(secondary);
+      h2 {
+        margin: 0;
+        padding: 0;
+        // color: #ffffff;
+        text-transform: uppercase;
+        // letter-spacing: 8px;
       }
-      stroke-width: 30px;
-      stroke-dasharray: 880px;
-      stroke-dashoffset: 880px;
-      animation: progress_bar 1s ease-in-out forwards;
-    }
 
-    @keyframes progress_bar {
-      0% {
-        stroke-dashoffset: 880px;
+      .skillbar {
+        box-sizing: border-box;
+        width: 75%;
+        margin: 40px;
       }
-      100% {
-        stroke-dashoffset: calc(880px - (880px * 100)/100);
+
+      .skillbar p {
+        text-transform: uppercase;
+        margin: 0 0 10px;
+        padding: 0;
+        font-weight: bold;
+        //letter-spacing: 3px;
+      }
+
+      .skillbar p:nth-child(2) {
+        float: right;
+        position: relative;
+        top: -30px;
+      }
+
+      .skill_percentage {
+        @include themed() {
+          background-color: darken($color: t(secondary), $amount: 15);
+        }
+        //background: #262626;
+        padding: 4px;
+        box-sizing: border-box;
+        @include themed() {
+          border: 1px solid lighten($color: t(secondary), $amount: 15);
+        }
+        //border: 1px solid #0fffb7;
+        border-radius: 6px;
+      }
+
+      
+      .skill_level {
+        @include themed() {
+          background-color: lighten($color: t(secondary), $amount: 15);
+        }
+        //background: #0fffb7;
+        width: 100%;
+        height: 10px;
+        border-radius: 6px;
+      }
+
+      .skill_level.web {
+        animation: webSkills 1.5s ease-in-out;
+        animation-fill-mode:both; 
+      }
+
+      @keyframes webSkills {
+        0% { width: 0; }
+        100% { width: 75% }
+      }
+
+      .skill_level.python {
+        animation: pythonSkill 1.5s ease-in-out;
+        animation-fill-mode:both; 
+      }
+
+      @keyframes pythonSkill {
+        0% { width: 0; }
+        100% { width: 60% }
+      }
+
+      .skill_level.java {
+        animation: javaSkill 1.5s ease-in-out;
+        animation-fill-mode:both; 
+      }
+
+      @keyframes javaSkill {
+        0% { width: 0; }
+        100% { width: 85% }
+      }
+
+      .skill_level.c_sharp {
+        animation: cSharpSkill 1.5s ease-in-out;
+        animation-fill-mode:both; 
+      }
+
+      @keyframes cSharpSkill {
+        0% { width: 0; }
+        100% { width: 85% }
+      }
+
+      display: grid;
+      grid-template-areas:
+      '.  .'
+      'sInfo1 sInfo2';
+      grid-template-columns: repeat(2, 1fr);
+
+      .sinfo_1 {
+        grid-area: sInfo1;
+      }
+        
+      .sinfo_2 {
+        grid-area: sInfo2;
       }
     }
 
@@ -209,91 +276,25 @@ main {
 
     .e_column_btn:hover {
       background: rgba(0, 0, 0, 0.5);
+      transition: all 1s ease-in;
     }
 
     .containerTab {
       grid-area: info;
-      padding: auto;
       @include themed() {
         color: set-text-colour(t(primary));
-      }
-      div {
-        margin: 25px;
       }
     }
 
     .table:after {
       content: "";
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.5s linear;
       display: table;
+      
       clear: both;
     }
-
-    .close_btn {
-      float: right;
-      @include themed() {
-        color: set-text-colour(t(primary));
-      }
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    // .accordion {
-      
-    //   max-height: auto;
-    //   overflow: hidden;
-    // }
-
-    // .accordion__label,
-    // .accordion__content {
-    //   padding: 14px 20px;
-    // }
-
-    // .accordion__label {
-    //   display: block;
-    //   font-weight: 500;
-    //   cursor: pointer;
-    //   position: relative;
-    //   transition: background 0.1s;
-    // }
-
-    // .accordion__label:hover {
-    //   border-radius: 10px;
-    //   background: rgba(0, 0, 0, 0.3);
-    // }
-
-    // .accordion__label::after {
-    //   content: "";
-    //   position: absolute;
-    //   top: 50%;
-    //   transform: translateX(-50%);
-    //   right: 20px;
-    //   width: 12px;
-    //   height: 6px;
-    //   background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
-    //   background-size: contain;
-    //   transition: transform 0.4s;
-    // }
-
-    // .accordion__content {
-    //   grid-area: desc;
-    //    : 1.6;
-    //   font-size: 0.85em;
-    //   display: none;
-    // }
-
-    // .accordion__input {
-    //   display: none;
-    // }
-
-    // .accordion__input:checked ~ .accordion__content {
-    //   display: block;
-    // }
-
-    // .accordion__input:checked ~ .accordion__label::after {
-    //   transform: translateX(-50%) rotate(0.5turn);
-    // }
-
-    
   }
 
   //Projects

@@ -7,6 +7,7 @@
 
 // Desktops & Laptops
 @include mediaLg {
+
     .projects {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -59,10 +60,21 @@
         grid-template-areas:
             'bioimage'
             'bio'
+            'skills'
             'edu1'
             'edu2'
-            'edu3';
+            'edu3'
+            'info';
 
+            .skills_tab {
+                grid-template-areas:
+                '.'
+                'sInfo1'
+                'sInfo2';
+                grid-gap: 0px;
+                grid-template-columns: 1fr;
+            }
+        
         grid-template-columns: 1fr;
     }
 
