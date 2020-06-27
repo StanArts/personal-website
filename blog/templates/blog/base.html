@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
   <link href="//fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
 <body>
@@ -27,7 +28,10 @@
       {% else %}
       <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
       {% endif %}
-      <h1><a href="/">Stanimir's Blog</a></h1>
+      <h1>
+        <a href="/"><i class="fas fa-home"></i></a>
+        <a href="/blog">Stanimir's Blog</a>
+      </h1>
     </div>
   </section>
   <div class="content container">

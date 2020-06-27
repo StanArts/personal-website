@@ -345,19 +345,16 @@ main {
   .about-info .e_column_btn:hover {
     background: rgba(0, 0, 0, 0.5);
     transition: all 1s ease-in; }
-  .about-info .containerTab {
+  .about-info .eventTab {
     grid-area: info; }
-    [data-theme='light'] .about-info .containerTab {
+    [data-theme='light'] .about-info .eventTab {
       color: #000000; }
-    [data-theme='dark'] .about-info .containerTab {
+    [data-theme='dark'] .about-info .eventTab {
       color: #fff; }
-  .about-info .table:after {
-    content: "";
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    display: table;
-    clear: both; }
+    .about-info .eventTab div p {
+      margin: 20px;
+      font-size: 20px;
+      font-style: italic; }
 
 .projects {
   display: grid;
@@ -430,7 +427,7 @@ main {
   margin-right: 15px;
   margin-bottom: 20px; }
 
-.item .info .btn, .item .info .btn-light, .item .info .btn-dark {
+.item .info .btn, .item .info .btn-light, .item .info .btn-dark, .item .info .btn-facebook {
   text-decoration: none;
   padding: 0.5rem 1rem;
   font-size: 14px;
@@ -438,10 +435,10 @@ main {
   cursor: pointer;
   transition: 0.4s ease-in-out; }
 
-[data-theme='light'] .item .info .btn:hover, [data-theme='light'] .item .info .btn-light:hover, [data-theme='light'] .item .info .btn-dark:hover {
+[data-theme='light'] .item .info .btn:hover, [data-theme='light'] .item .info .btn-light:hover, [data-theme='light'] .item .info .btn-dark:hover, [data-theme='light'] .item .info .btn-facebook:hover {
   box-shadow: 0px 7px 10px #000000; }
 
-[data-theme='dark'] .item .info .btn:hover, [data-theme='dark'] .item .info .btn-light:hover, [data-theme='dark'] .item .info .btn-dark:hover {
+[data-theme='dark'] .item .info .btn:hover, [data-theme='dark'] .item .info .btn-light:hover, [data-theme='dark'] .item .info .btn-dark:hover, [data-theme='dark'] .item .info .btn-facebook:hover {
   box-shadow: 0px 7px 10px #fff; }
 
 .btn-light {
@@ -451,6 +448,10 @@ main {
 
 .btn-dark {
   background: #333333;
+  color: #ffffff; }
+
+.btn-facebook {
+  background: #4267B2;
   color: #ffffff; }
 
 #main-footer {
@@ -528,7 +529,7 @@ html.transition * :after {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {

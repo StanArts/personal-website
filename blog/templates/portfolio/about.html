@@ -133,7 +133,7 @@
           <h3> <span class="text-secondary">Computer science</span> </h3>
         </div>
 
-        <div class="edu edu-3 e_column_btn" onclick="openTab('events');">
+        <div class="edu edu-3 e_column_btn" onclick="myFunction()">
           <div class="table">
               <h2>Events</h2>
               <h3><span class="text-secondary"> <i> Hackathons <br> Competitions </i> </span></h3>
@@ -142,27 +142,32 @@
           </div>
         </div>
 
-        <div id="events" class="edu containerTab" style="display: none">
-          <!-- <span onclick="this.parentElement.style.display='none'" class="close_btn">x</span> -->
-            <div>
-              <h2>Some of the important events I attended in the last two years</h2>
-              <p>Event 1</p>
-              <p>Event 2</p>
-            </div>
+        <div id="events" class="edu eventTab" style="display: none">
+          <div>
+            <h2>Important events I have attended:</h2>
+            <p>Event 1</p>
+            <p class="text-secondary">Event 2</p>
+            <p>Event 3</p>
+            <p class="text-secondary">Event 4</p>
+          </div>
         </div>
       </div>
     </main>
 
     <script>
-      // Hide all elements with class="containerTab", except for the one that matches the clickable grid column
-      function openTab(tabName) {
-        var i, x;
-        x = document.getElementsByClassName("containerTab");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
-      } 
+      function myFunction() {
+      var x = document.getElementById("events");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+          x.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+          inline: "nearest"
+        });
+      } else {
+        x.style.display = "none";
+     }
+    } 
     </script>
   
     <footer id="main-footer">

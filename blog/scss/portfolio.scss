@@ -279,21 +279,17 @@ main {
       transition: all 1s ease-in;
     }
 
-    .containerTab {
+    .eventTab {
       grid-area: info;
       @include themed() {
         color: set-text-colour(t(primary));
       }
-    }
 
-    .table:after {
-      content: "";
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 0.5s linear;
-      display: table;
-      
-      clear: both;
+      div p {
+        margin: 20px;
+        font-size: 20px;
+        font-style: italic;
+      }
     }
   }
 
@@ -401,9 +397,15 @@ main {
 }
 
 .btn-dark {
-    @extend .btn;
-    background: #333333;
-    color: #ffffff;
+  @extend .btn;
+  background: #333333;
+  color: #ffffff;
+}
+
+.btn-facebook {
+  @extend .btn;
+  background: #4267B2;
+  color: #ffffff;
 }
 
   #main-footer {
