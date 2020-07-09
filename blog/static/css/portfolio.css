@@ -227,7 +227,8 @@ main {
   display: grid;
   grid-gap: 30px;
   grid-template-areas: 'bioimage bio bio' 'skills skills skills' 'edu1 edu2 edu3' 'info info info';
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-column-align: center; }
   .about-info .bio-image {
     grid-area: bioimage;
     margin: auto;
@@ -535,10 +536,8 @@ html.transition * :after {
   main {
     align-items: center;
     text-align: center; }
-    main lg-heading {
-      line-height: 1;
-      font-size: 0.5rem;
-      margin-bottom: 1rem; }
+    main .lg-heading {
+      font-size: 3rem; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -552,7 +551,7 @@ html.transition * :after {
     transform: translate3d(0, 100%, 0);
     font-size: 24px; }
   .menu-branding {
-    height: 25vh;
+    height: 35vh;
     transform: translate3d(0, -100%, 0); }
     .menu-branding .portrait {
       transform: scale(0.5);
@@ -563,16 +562,38 @@ html.transition * :after {
             */ }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'skills' 'edu1' 'edu2' 'edu3' 'info';
-    grid-template-columns: 1fr; }
+    grid-template-columns: 1fr;
+    -ms-grid-column-align: center; }
     .about-info .skills_tab {
       grid-template-areas: '.' 'sInfo1' 'sInfo2';
       grid-gap: 0px;
       grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr);
+    -ms-grid-column-align: center; }
+  .item {
+    width: 240px;
+    height: 240px; }
+  .item .info p {
+    display: none; }
+  .item .info .btn, .item .info .btn-light, .item .info .btn-dark, .item .info .btn-facebook {
+    padding: 0.2rem 0.7rem; }
+  .g_pic {
+    width: 400px;
+    height: 500px; } }
 
 @media screen and (max-width: 500px) {
+  .item {
+    width: 200px;
+    height: 200px; }
+  .item .info h1 {
+    font-size: 1.5rem; }
+  .item .info .btn, .item .info .btn-light, .item .info .btn-dark, .item .info .btn-facebook {
+    padding: 0.1rem 0.2rem; }
   main#home h1 {
     margin-top: 10vh; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .g_pic {
+    width: 200px;
+    height: 300px; } }

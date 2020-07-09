@@ -104,6 +104,8 @@ main {
       'edu1 edu2 edu3'
       'info info info';
     grid-template-columns: repeat(3, 1fr);
+
+    -ms-grid-column-align: center;
   
     .bio-image {
       grid-area: bioimage;
@@ -480,7 +482,7 @@ main {
   html.transition * :before,
   html.transition * :after {
     transition: all 750ms !important;
-    transition-delay: 0 !important;
+    transition-delay: 0 !important; 
   }
 
   @import 'mobile';
