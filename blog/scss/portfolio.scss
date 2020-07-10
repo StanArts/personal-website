@@ -105,7 +105,7 @@ main {
       'info info info';
     grid-template-columns: repeat(3, 1fr);
 
-    -ms-grid-column-align: center;
+    //-ms-grid-column-align: center;
   
     .bio-image {
       grid-area: bioimage;
@@ -119,6 +119,7 @@ main {
     .bio {
       grid-area: bio;
       font-size: 1.5rem;
+      letter-spacing: normal;
     }
   
     .edu-1 {
@@ -136,7 +137,7 @@ main {
   
     .edu {
       padding: 0.5rem;
-      border-radius: 10px;
+      border-radius: 20px;
       //box-shadow: rgba(0, 0, 0, 0.2);
       // h2 {
       //   text-transform: uppercase;
@@ -162,7 +163,7 @@ main {
       background: #333333;
       box-sizing: border-box;
       //box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
+      border-radius: 20px;
 
       h2 {
         margin: 0;
@@ -174,7 +175,7 @@ main {
 
       .skillbar {
         box-sizing: border-box;
-        width: 75%;
+        max-width: 85%;
         margin: 40px;
       }
 
