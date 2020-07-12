@@ -89,7 +89,7 @@
     position: relative;
     font-size: 30px;
     text-transform: uppercase;
-    padding: 1rem 0;
+    padding: 0.8rem 0;
     font-weight: 300;
     text-decoration: none;
     transition: all 1.5s ease-out; }
@@ -540,7 +540,9 @@ html.transition * :after {
     align-items: center;
     text-align: center; }
     main .lg-heading {
-      font-size: 3rem; }
+      font-size: 3rem; } }
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -559,10 +561,12 @@ html.transition * :after {
     .menu-branding .portrait {
       transform: scale(0.5);
       /*
-            background: url('../img/portrait_small.jpg');
-            width: 150px;
-            height: 150px;
-            */ }
+                background: url('../img/portrait_small.jpg');
+                width: 150px;
+                height: 150px;
+                */ } }
+
+@media screen and (max-width: 768px) {
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'skills' 'edu1' 'edu2' 'edu3' 'info';
     grid-template-columns: 1fr;
