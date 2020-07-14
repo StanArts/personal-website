@@ -68,6 +68,12 @@
         }
     }
 
+    .menu {
+        .nav-link {
+            padding: 0.4rem 0;
+        }
+    }
+
     .about-info {
         grid-template-areas:
             'bioimage'
@@ -140,10 +146,8 @@
         margin-top: 10vh;
     }
 
-    .skills_tab {
-        .skillbar p:nth-child(2) {
-            display: none;
-        }
+    .skillbar p:nth-child(2) {
+        display: none;
     }
 
     .projects {

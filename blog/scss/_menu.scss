@@ -102,7 +102,7 @@
         position: relative;
         font-size: 30px;
         text-transform: uppercase;
-        padding: 0.8rem 0;
+        padding: 1rem 0;
         font-weight: 300;
         @include themed() {
             color: set-text-colour(t(primary));
@@ -131,8 +131,8 @@
         }
 
         .portrait {
-            width: 250px;
-            height: 250px;
+            width: 240px;
+            height: 240px;
             background: url('/static/img/menu_portrait.jpg');
             border-radius: 50%;
             @include themed() {
@@ -140,8 +140,6 @@
             }
         }
     }
-
-
 }
 
 // Delay each nav item slide by 0.1s

@@ -206,7 +206,6 @@ main {
         //border: 1px solid #0fffb7;
         border-radius: 6px;
       }
-
       
       .skill_level {
         @include themed() {
@@ -230,7 +229,7 @@ main {
 
       .skill_level.python {
         animation: pythonSkill 1.5s ease-in-out;
-        animation-fill-mode:both; 
+        animation-fill-mode:both;
       }
 
       @keyframes pythonSkill {
