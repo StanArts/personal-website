@@ -480,24 +480,8 @@ input:checked + .slider:before {
 
 html.transition,
 html.transition *,
-html.transition * :before,
-html.transition * :after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}
-
-html.-webkit-transition,
-html.-webkit-transition *,
-html.-webkit-transition * :before,
-html.-webkit-transition * :after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
-}
-
-html.-o-transition,
-html.-o-transition *,
-html.-o-transition * :before,
-html.-o-transition * :after {
+html.transition *:before,
+html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
