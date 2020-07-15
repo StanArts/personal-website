@@ -4,23 +4,25 @@
   --text-color: #000000;
   --background-color: #ffffff;
   --blend-mode: normal;
-  --toggle-btn-color: #919191; }
+  --toggle-btn-color: #919191;
+  --wave-filter: invert(0%); }
 
 .dark-theme {
-  --header-color: #7f0000;
+  --header-color: #00a7aa;
   --text-color: #ffffff;
   --title-color: #000000;
   --background-color: #000000;
   --blend-mode: lighten;
-  --toggle-btn-color: #fafafa; }
+  --toggle-btn-color: #fafafa;
+  --wave-filter: invert(100%); }
 
 .toggle-btn {
   width: 4rem;
   height: 4rem;
   position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  border: 2px solid var(--toggle-btn-color);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   cursor: pointer;
   z-index: 9999; }
@@ -30,6 +32,7 @@
   font-size: 2rem; }
 
 body {
+  color: var(--text-color);
   background: var(--background-color);
   transition: background-color 2s ease-out; }
   body section {
@@ -40,14 +43,14 @@ body {
     overflow: hidden;
     transition: background-color 2s ease-out;
     border: none; }
-  body .darkmode--activated section {
-    background-color: #ff5855;
-    /* inverted to #00a7aa */ }
   body .page-header {
     margin-top: 0;
     padding: 20px 20px 20px 40px;
     border: none; }
-  body .page-header h1, body .page-header h1 a, body .page-header h1 a:visited, body .page-header h1 a:active {
+  body .page-header h1,
+  body .page-header h1 a,
+  body .page-header h1 a:visited,
+  body .page-header h1 a:active {
     color: var(--title-color);
     font-size: 5rem;
     text-decoration: none; }
@@ -59,7 +62,8 @@ body {
     height: 40px;
     background: url("/static/img/blog-elements/wave.png");
     background-size: 1100px 100px;
-    filter: invert(100%); }
+    transition: filter 2s ease-out;
+    filter: var(--wave-filter); }
   body section .wave.wave1 {
     animation: animate 10s linear infinite;
     z-index: 1000;
@@ -98,25 +102,39 @@ body {
     background-position-x: -1100px; } }
   body .content {
     margin-left: 45px;
-    position: fixed; }
-  body h1, body h2, body h3, body h4 {
-    font-family: 'Chelsea Market', 'cursive'; }
+    margin-right: auto; }
+    body .content input {
+      background-color: var(--background-color);
+      transition: background-color 2s ease-out; }
+  body h1,
+  body h2,
+  body h3,
+  body h4 {
+    font-family: "Chelsea Market", "cursive"; }
   body .date {
     color: #828282; }
   body .save {
-    float: right; }
-  body .post-form textarea, body .post-form input {
-    width: 100%; }
-  body .top-menu, body .top-menu:hover, body .top-menu:visited {
-    color: var(--title-color);
     float: right;
+    background-color: var(--background-color); }
+  body .post-form textarea,
+  body .post-form input {
+    width: 100%;
+    background-color: var(--background-color); }
+  body .top-menu,
+  body .top-menu:hover,
+  body .top-menu:visited {
+    color: var(--title-color);
+    position: absolute;
+    top: 10px;
+    right: 10px;
     font-size: 26pt;
     margin-right: 20px; }
   body .post {
     margin-top: 45px;
     margin-bottom: 70px; }
-  body .post h2 a, body .post h2 a:visited {
+  body .post h2 a,
+  body .post h2 a:visited {
     color: var(--text-color); }
   body .comment {
-    color: var(--text-color);
-    margin: 20px 0px 20px 20px; }
+    margin: 20px 0px 20px 20px;
+    color: var(--text-color); }

@@ -1,24 +1,13 @@
-{% extends 'blog/base.html' %}
-{% block content %}
-{% for post in posts %}
+{% extends 'blog/base.html' %} {% block content %} {% for post in posts %}
 <div class="post">
   <div class="date">
     {{ post.published_date }}
   </div>
   <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
   <p>{{ post.tagline|safe|linebreaksbr }}</p>
-  <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
-  <!-- <style>
-    .limited-text {
-      display: block;
-      text-overflow: ellipsis;
-      word-wrap: break-word;
-      overflow: hidden;
-      max-height: 3.6em;
-      line-height: 1.8em;
-    }
-  </style> -->
+  <a href="{% url 'post_detail' pk=post.pk %}"
+    >Comments: {{ post.approved_comments.count }}</a
+  >
 </div>
 
-{% endfor %}
-{% endblock content %}
+{% endfor %} {% endblock content %}

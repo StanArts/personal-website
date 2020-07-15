@@ -1,24 +1,45 @@
+// Colour Themes:
+:root {
+  --header-color: #0051aa;
+  --title-color: #ffffff;
+  --text-color: #000000;
+  --background-color: #ffffff;
+  --blend-mode: normal;
+  --toggle-btn-color: #919191;
+  --wave-filter: invert(0%);
+}
+
+.dark-theme {
+  --header-color: #00a7aa; //#7f0000;
+  --text-color: #ffffff;
+  --title-color: #000000;
+  --background-color: #000000;
+  --blend-mode: lighten;
+  --toggle-btn-color: #fafafa;
+  --wave-filter: invert(100%);
+}
+
 // Media Query Mixins
-@mixin  mediaSm {
-    @media screen and (max-width: 500px) {
-        @content;
-    }
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
 }
 
-@mixin  mediaMd {
-    @media screen and (max-width: 768px) {
-        @content;
-    }
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
 }
 
-@mixin  mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px) {
-        @content;
-    }
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
 }
 
-@mixin  mediaXL {
-    @media screen and (min-width: 1171px) {
-        @content;
-    }
+@mixin mediaXL {
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
 }

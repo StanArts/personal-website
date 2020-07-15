@@ -1,30 +1,13 @@
-@import 'config';
-
-:root {
-  --header-color: #0051aa;
-  --title-color: #ffffff;
-  --text-color: #000000;
-  --background-color: #ffffff;
-  --blend-mode: normal;
-  --toggle-btn-color: #919191;
-}
-
-.dark-theme {
-  --header-color: #7f0000;
-  --text-color: #ffffff;
-  --title-color: #000000;
-  --background-color: #000000;
-  --blend-mode: lighten;
-  --toggle-btn-color: #fafafa;
-}
+@import "config";
 
 .toggle-btn {
   width: 4rem;
   height: 4rem;
   position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  border: 2px solid var(--toggle-btn-color);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  //border: 2px solid var(--toggle-btn-color);
   display: flex;
   cursor: pointer;
   z-index: 9999;
@@ -36,142 +19,152 @@
 }
 
 body {
-
+  color: var(--text-color);
   background: var(--background-color);
   transition: background-color 2s ease-out;
 
   section {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background-color: var(--header-color);
-      overflow: hidden;
-      //isolation: isolate;
-      transition: background-color 2s ease-out;
-      border: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--header-color);
+    overflow: hidden;
+    transition: background-color 2s ease-out;
+    border: none;
   }
-    
-    .darkmode--activated section {
-      
-      background-color: #ff5855; /* inverted to #00a7aa */
+
+  .page-header {
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+    border: none;
+  }
+
+  .page-header h1,
+  .page-header h1 a,
+  .page-header h1 a:visited,
+  .page-header h1 a:active {
+    color: var(--title-color);
+    font-size: 5rem;
+    text-decoration: none;
+  }
+
+  section .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: url("/static/img/blog-elements/wave.png");
+    background-size: 1100px 100px;
+    transition: filter 2s ease-out;
+    filter: var(--wave-filter);
+  }
+
+  section .wave.wave1 {
+    animation: animate 10s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0px;
+  }
+
+  section .wave.wave2 {
+    animation: animate2 5s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -2s;
+    bottom: -10px;
+  }
+
+  section .wave.wave3 {
+    animation: animate 5s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -5s;
+    bottom: -15px;
+  }
+
+  section .wave.wave4 {
+    animation: animate2 15s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: -20px;
+  }
+
+  @keyframes animate {
+    0% {
+      background-position-x: 0;
     }
-    
-    .page-header {
-      margin-top: 0;
-      padding: 20px 20px 20px 40px;
-      border: none;
+    100% {
+      background-position-x: 1100px;
     }
-    
-    .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-      color: var(--title-color);
-      font-size: 5rem;
-      text-decoration: none;
+  }
+
+  @keyframes animate2 {
+    0% {
+      background-position-x: 0;
     }
-    
-    section .wave {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background: url('/static/img/blog-elements/wave.png');
-      background-size: 1100px 100px;
-      filter: invert(100%);
+    100% {
+      background-position-x: -1100px;
     }
-    
-      section .wave.wave1 {
-        
-        animation: animate 10s linear infinite;
-        z-index: 1000;
-        opacity: 1;
-        animation-delay: 0s;
-        bottom: 0px;
-      }
-    
-      section .wave.wave2 {
-        animation: animate2 5s linear infinite;
-        z-index: 999;
-        opacity: 0.5;
-        animation-delay: -2s;
-        bottom: -10px;
-      }
-    
-      section .wave.wave3 {
-        animation: animate 5s linear infinite;
-        z-index: 998;
-        opacity: 0.2;
-        animation-delay: -5s;
-        bottom: -15px;
-      }
-    
-      section .wave.wave4 {
-        animation: animate2 15s linear infinite;
-        z-index: 997;
-        opacity: 0.7;
-        animation-delay: -5s;
-        bottom: -20px;
-      }
-    
-    @keyframes animate {
-      0% {
-        background-position-x: 0;
-      }
-      100% {
-        background-position-x: 1100px;
-      }
+  }
+
+  .content {
+    margin-left: 45px;
+    margin-right: auto;
+
+    input {
+      background-color: var(--background-color);
+      transition: background-color 2s ease-out;
     }
-    
-    @keyframes animate2 {
-      0% {
-        background-position-x: 0;
-      }
-      100% {
-        background-position-x: -1100px;
-      }
-    }
-    
-    .content {
-      margin-left: 45px;
-      position: fixed;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: 'Chelsea Market', 'cursive';
-    }
-    
-    .date {
-      color: #828282;
-    }
-    
-    .save {
-      float: right;
-    }
-    
-    .post-form textarea, .post-form input {
-      width: 100%;
-    }
-    
-    .top-menu, .top-menu:hover, .top-menu:visited {
-      color: var(--title-color);
-      float: right;
-      font-size: 26pt;
-      margin-right: 20px;
-    }
-    
-    .post {
-      
-      margin-top: 45px;
-      margin-bottom: 70px;
-    }
-    
-    .post h2 a, .post h2 a:visited {
-      color: var(--text-color);
-    }
-    
-    .comment {
-      color: var(--text-color);
-      margin: 20px 0px 20px 20px;
-    }
-  
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Chelsea Market", "cursive";
+  }
+
+  .date {
+    color: #828282;
+  }
+
+  .save {
+    float: right;
+    background-color: var(--background-color);
+  }
+
+  .post-form textarea,
+  .post-form input {
+    width: 100%;
+    background-color: var(--background-color);
+  }
+
+  .top-menu,
+  .top-menu:hover,
+  .top-menu:visited {
+    color: var(--title-color);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 26pt;
+    margin-right: 20px;
+  }
+
+  .post {
+    margin-top: 45px;
+    margin-bottom: 70px;
+  }
+
+  .post h2 a,
+  .post h2 a:visited {
+    color: var(--text-color);
+  }
+
+  .comment {
+    margin: 20px 0px 20px 20px;
+    color: var(--text-color);
+  }
 }
-  
