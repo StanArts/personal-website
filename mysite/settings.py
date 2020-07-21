@@ -19,13 +19,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$c&@vr*=8gawtwus4xmzmmw9s7d4jt_&s&-$ilw9#jlg=_)t+v'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'stanvel.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'www.stangvel.com']
 
 LOGIN_REDIRECT_URL = '/'
 
