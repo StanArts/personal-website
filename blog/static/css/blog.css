@@ -101,8 +101,9 @@ body {
   100% {
     background-position-x: -1100px; } }
   body .content {
-    margin-left: 25px;
-    margin-right: 25px; }
+    margin-right: 45px;
+    margin-left: 45px;
+    width: auto; }
     body .content input {
       background-color: var(--background-color);
       transition: background-color 2s ease-out; }
@@ -111,6 +112,13 @@ body {
   body h3,
   body h4 {
     font-family: "Chelsea Market", "cursive"; }
+  body p {
+    font-size: 19px;
+    text-align: justify; }
+  body img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
   body .date {
     color: #828282; }
   body .save {
