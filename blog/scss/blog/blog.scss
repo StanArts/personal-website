@@ -133,7 +133,7 @@ body {
     text-align: justify;
   }
   
-  img {
+  .picture {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -152,6 +152,7 @@ body {
   .post-form input {
     width: 100%;
     background-color: var(--background-color);
+    transition: background-color 2s ease-out;
   }
 
   .top-menu,

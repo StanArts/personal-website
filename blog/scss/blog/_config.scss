@@ -23,6 +23,10 @@
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
     @content;
+
+    p {
+      font-size: 12px;
+    }
   }
 }
 
